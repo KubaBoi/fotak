@@ -4,8 +4,6 @@ from time import sleep
 
 camera = PiCamera()
 
-sleep(20)
-
 camera.rotation = 270
 camera.start_preview()
 sleep(60)
