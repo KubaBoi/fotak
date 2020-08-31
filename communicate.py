@@ -11,6 +11,8 @@ class Comm:
         self.ser.flushInput()
         self.ser.flushOutput()
 
+        self.oldData = 0,0,0,0,0
+
     #b'|19,-52,-22,0,0|\r\n'
     def read(self):
         try:
@@ -23,7 +25,8 @@ class Comm:
             takeShot = data[3]
             record = data[4]
 
-            return x,y,z,takeShot,record
+            self.oldData = x,y,z,takeShot,record
+            return self.oldData
         except:
-            return 0,0,0,0,0
+            return self.oldData
 

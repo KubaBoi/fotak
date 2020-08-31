@@ -9,8 +9,7 @@ cam = Cam()
 cam.startPreview()
 
 comm = Comm("/dev/ttyUSB0", 115200)
-
 while True:
-	#read_ser=ser.readline().decode("utf-8")
-
-	print(comm.read())
+	x,y,z,takeShot,record = comm.read()
+	if (record == 1):
+		print("penis")
