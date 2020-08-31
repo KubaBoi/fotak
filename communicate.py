@@ -13,14 +13,17 @@ class Comm:
 
     #b'|19,-52,-22,0,0|\r\n'
     def read(self):
-        output = self.ser.readline().split("|")[1]
-        data = output.split(",")
+        try:
+            output = self.ser.readline().split("|")[1]
+            data = output.split(",")
 
-        x = data[0]
-        y = data[1]
-        z = data[2]
-        takeShot = data[3]
-        record = data[4]
+            x = data[0]
+            y = data[1]
+            z = data[2]
+            takeShot = data[3]
+            record = data[4]
 
-        return x,y,z,takeShot,record
+            return x,y,z,takeShot,record
+        except:
+            return 0,0,0,0,0
 
