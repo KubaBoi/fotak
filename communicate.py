@@ -20,7 +20,7 @@ class Comm:
         
         data = output.split(",")
 
-        if (len(data) != 5):
+        if (len(data) < 3):
             return 0,0,0,0,0
 
         x = int(data[0])
