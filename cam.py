@@ -6,6 +6,7 @@ class Cam:
         self.camera = PiCamera()
 
         self.camera.rotation = 90
+        self.camera.exposure_mode = "off"
     
     def startPreview(self):
         self.camera.start_preview()
