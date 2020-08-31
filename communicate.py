@@ -7,7 +7,7 @@ import serial
 class Comm:
     def __init__(self, COM, baudrate):
         self.ser = serial.Serial(COM, baudrate, timeout = 1)
-        ser.baudrate=baudrate
+        self.ser.baudrate=baudrate
         self.ser.flushInput()
         self.ser.flushOutput()
 
