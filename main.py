@@ -24,6 +24,7 @@ while True:
 		if (recording):
 			recording = False
 			print("Recording ended...")
+			cam.camera.stop_recording()
 		else:
 			recording = True
 			print("Recording started...")
