@@ -16,8 +16,9 @@ class Comm:
     #b'|19,-52,-22,0,0|\r\n'
     def read(self):
         try:
-            output = self.ser.readline().split("|")[1]
-            data = output.split(",")
+            output = self.ser.readline().split("|")
+            print(output)
+            data = output[1].split(",")
 
             x = int(data[0])
             y = int(data[1])
@@ -25,8 +26,8 @@ class Comm:
             takeShot = int(data[3])
             record = int(data[4])
 
-            self.oldData = x,y,z,takeShot,record
-            return self.oldData
+            self.oldData = x,y,z
+            return x,y,z,takeShot,record
         except:
-            return self.oldData
+            return self.oldData[0],self.oldData[1],self.oldData[2],0,0
 
