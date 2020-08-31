@@ -21,4 +21,6 @@ class Cam:
         self.camera.capture("/var/www/html/fotak/frames/frame" + frame + ".png")
 
     def takeShot(self):
+        print("Taking shot...")
         self.camera.capture("shot.png")
+        print("Shot taken")
