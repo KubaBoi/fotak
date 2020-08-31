@@ -19,11 +19,11 @@ class Comm:
             output = self.ser.readline().split("|")[1]
             data = output.split(",")
 
-            x = data[0]
-            y = data[1]
-            z = data[2]
-            takeShot = data[3]
-            record = data[4]
+            x = int(data[0])
+            y = int(data[1])
+            z = int(data[2])
+            takeShot = int(data[3])
+            record = int(data[4])
 
             self.oldData = x,y,z,takeShot,record
             return self.oldData
