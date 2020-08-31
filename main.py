@@ -8,7 +8,7 @@ cam = Cam()
 
 cam.startPreview()
 
-comm = Comm("/dev/ttyACM0", 115200)
+comm = Comm("/dev/ttyUSB0", 115200)
 
 while True:
 	#read_ser=ser.readline().decode("utf-8")
