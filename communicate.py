@@ -16,7 +16,7 @@ class Comm:
     #b'|19,-52,-22,0,0|\r\n'
     def read(self):
         try:
-            output = self.ser.readline().split("|")
+            output = self.ser.readline().split("|").decode("utf-8")
             print(output)
             data = output[1].split(",")
 
