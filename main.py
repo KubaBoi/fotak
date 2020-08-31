@@ -8,7 +8,10 @@ cam = Cam()
 
 cam.startPreview()
 
-comm = Comm("/dev/ttyUSB1", 115200)
+try:
+	comm = Comm("/dev/ttyUSB1", 115200)
+except:
+	comm = Comm("/dev/ttyUSB0", 115200)
 #comm = Comm("COM5", 115200)
 
 recording = False
