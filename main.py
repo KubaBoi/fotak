@@ -23,8 +23,10 @@ while True:
 	if (record == 1):
 		if (recording):
 			recording = False
+			print("Recording ended...")
 		else:
 			recording = True
+			print("Recording started...")
 
 	if (recording):
 		frameNumber += 1
