@@ -9,7 +9,23 @@ cam = Cam()
 cam.startPreview()
 
 comm = Comm("/dev/ttyUSB0", 115200)
+#comm = Comm("COM5", 115200)
+
+recording = False
+frameNumber = 0
+
 while True:
 	x,y,z,takeShot,record = comm.read()
+
 	if (record == 1):
-		print("penis")
+		if (recording):
+			recording = False
+		else:
+			recording = True
+
+	if (recording):
+		frameNumber += 1
+		cam.recordFrame(frameNumber)
+
+	if (takeShot == 1):
+		cam.takeShot()

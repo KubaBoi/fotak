@@ -75,9 +75,8 @@ void loop() {
 
   if (recording) digitalWrite(REC_DIOD, HIGH);
   else digitalWrite(REC_DIOD, LOW);
-
+  
   Serial.println(data);
-  Serial.flush();
 }
 
 String oldData = "0,0,0";
@@ -136,7 +135,6 @@ String takeRecording() {
   else {
     response = "0";
   }
-  
   oldButtonRecording = buttonState;
   return response;
 }

@@ -17,7 +17,10 @@ class Comm:
     def read(self):
         try:
             output = self.ser.readline().decode("utf-8")
-            print(output)
+            self.ser.flush()
+            self.ser.flushInput()
+            self.ser.flushOutput()
+            
             data = output.split(",")
 
             x = int(data[0])

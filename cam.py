@@ -11,3 +11,14 @@ class Cam:
         self.camera.start_preview()
     def stopPreview(self):
         self.camera.stop_preview()
+
+    def recordFrame(self, frameNumber):
+        frame = ""
+        for i in range(0, 5 - len(str(frameNumber))):
+            frame += "0"
+
+        frame += str(frameNumber)
+        self.camera.capture("/frames/frame" + frame + ".png")
+
+    def takeShot(self):
+        self.camera.capture("shot.png")
