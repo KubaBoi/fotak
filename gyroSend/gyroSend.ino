@@ -76,7 +76,7 @@ void loop() {
   if (recording) digitalWrite(REC_DIOD, HIGH);
   else digitalWrite(REC_DIOD, LOW);
 
-  Serial.println("|" + data + "|");
+  Serial.println(data);
   Serial.flush();
 }
 
