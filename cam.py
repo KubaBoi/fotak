@@ -18,7 +18,7 @@ class Cam:
             frame += "0"
 
         frame += str(frameNumber)
-        self.camera.capture("/frames/frame" + frame + ".png")
+        self.camera.capture("frames/frame" + frame + ".png")
 
     def takeShot(self):
         print("Taking shot...")
