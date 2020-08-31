@@ -11,26 +11,23 @@ class Comm:
         self.ser.flushInput()
         self.ser.flushOutput()
 
-        self.oldData = 0,0,0,0,0
-
     #b'|19,-52,-22,0,0|\r\n'
     def read(self):
-        try:
-            output = self.ser.readline().decode("utf-8")
-            self.ser.flush()
-            self.ser.flushInput()
-            self.ser.flushOutput()
-            
-            data = output.split(",")
+        output = self.ser.readline().decode("utf-8")
+        self.ser.flush()
+        self.ser.flushInput()
+        self.ser.flushOutput()
+        
+        data = output.split(",")
 
-            x = int(data[0])
-            y = int(data[1])
-            z = int(data[2])
-            takeShot = int(data[3])
-            record = int(data[4])
+        if (len(data) != 5):
+            return 0,0,0,0,0
 
-            self.oldData = x,y,z
-            return x,y,z,takeShot,record
-        except:
-            return self.oldData[0],self.oldData[1],self.oldData[2],0,0
+        x = int(data[0])
+        y = int(data[1])
+        z = int(data[2])
+        takeShot = int(data[3])
+        record = int(data[4])
+
+        return x,y,z,takeShot,record
 

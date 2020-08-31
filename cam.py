@@ -18,7 +18,7 @@ class Cam:
             frame += "0"
 
         frame += str(frameNumber)
-        self.camera.capture("/frames/frame" + frame + ".png")
+        self.camera.capture("/var/www/html/fotak/frames/frame" + frame + ".png")
 
     def takeShot(self):
         self.camera.capture("shot.png")
