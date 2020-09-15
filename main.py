@@ -33,9 +33,5 @@ while True:
 			cam.startRecording()
 			print("Recording started...")
 
-	"""if (recording):
-		frameNumber += 1
-		cam.recordFrame(frameNumber)
-""""
 	if (takeShot == 1):
 		cam.takeShot()
