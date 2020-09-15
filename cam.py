@@ -12,14 +12,11 @@ class Cam:
     def stopPreview(self):
         self.camera.stop_preview()
 
-    def recordFrame(self, frameNumber):
+    def startRecording(self, frameNumber):
         self.camera.start_recording("video.h264")
-        """frame = ""
-        for i in range(0, 5 - len(str(frameNumber))):
-            frame += "0"
 
-        frame += str(frameNumber)
-        self.camera.capture("frames/frame" + frame + ".png")"""
+    def stopRecording(self):
+        self.camera.stop_recording()
 
     def takeShot(self):
         print("Taking shot...")

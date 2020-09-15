@@ -1,3 +1,5 @@
+#pussyword qawsedrftgyh
+
 from cam import Cam
 from communicate import Comm
 from time import sleep
