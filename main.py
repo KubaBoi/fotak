@@ -27,14 +27,15 @@ while True:
 		if (recording):
 			recording = False
 			print("Recording ended...")
-			cam.camera.stop_recording()
+			cam.stopRecording()
 		else:
 			recording = True
+			cam.startRecording()
 			print("Recording started...")
 
-	if (recording):
+	"""if (recording):
 		frameNumber += 1
 		cam.recordFrame(frameNumber)
-
+""""
 	if (takeShot == 1):
 		cam.takeShot()

@@ -12,7 +12,7 @@ class Cam:
     def stopPreview(self):
         self.camera.stop_preview()
 
-    def startRecording(self, frameNumber):
+    def startRecording(self):
         self.camera.start_recording("video.h264")
 
     def stopRecording(self):
